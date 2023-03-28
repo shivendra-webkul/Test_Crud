@@ -23,11 +23,6 @@ class StudentController extends Controller
 
         return view('crud::students.index', compact('students'));
 
-         if (request()->ajax()) {
-             return app(StudentDataGrid::class)->toJson();
-         }
- 
-         return view('crud::admin.index');
      }
 
 

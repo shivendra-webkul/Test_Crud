@@ -20,7 +20,7 @@ class StudentDataGrid extends DataGrid
     public function prepareQueryBuilder()
     {
         $queryBuilder = DB::table('students')
-            ->select('id')
+            // ->select('id')
             ->addSelect('id', 'name', 'phone_number', 'email', 'gender', 'date_of_birth', 'status', 'full_address', 'password');
     
         $this->setQueryBuilder($queryBuilder);
@@ -54,7 +54,7 @@ class StudentDataGrid extends DataGrid
 
         $this->addColumn([
             'index'      => 'phone_number',
-            'label'      => trans('admin::app.datagrid.phone_number'),
+            'label'      => trans('crud::app.phone-number'),
             'type'       => 'number',
             'searchable' => true,
             'sortable'   => true,
@@ -96,7 +96,7 @@ class StudentDataGrid extends DataGrid
 
         $this->addColumn([
             'index'      => 'date_of_birth',
-            'label'      => trans('admin::app.datagrid.date_of_birth'),
+            'label'      => trans('crud::app.date-of-birth'),
             'type'       => 'date',
             'searchable' => false,
             'sortable'   => true,
@@ -114,22 +114,22 @@ class StudentDataGrid extends DataGrid
 
         $this->addColumn([
             'index'       => 'full_address',
-            'label'       => trans('admin::app.customers.customers.full_address'),
+            'label'       => trans('crud::app.address'),
             'type'        => 'string',
             'searchable'  => false,
             'sortable'    => true,
             'filterable'  => true,
-            'visibility'  => false,
+
         ]);
 
         $this->addColumn([
             'index'       => 'password',
-            'label'       => trans('admin::app.customers.customers.password'),
+            'label'       => trans('crud::app.password'),
             'type'        => 'password',
             'searchable'  => false,
             'sortable'    => true,
             'filterable'  => true,
-            'visibility'  => false,
+        
         ]);
     }
 

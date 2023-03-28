@@ -1,6 +1,6 @@
 <?php
 
-use Webkul\Crud\Http\Controllers\Shop\StudentController;
+use Webkul\Crud\Http\Controllers\Admin\StudentController;
 
 Route::group(['middleware' => ['web', 'admin']], function () {
   Route::prefix(config('app.admin_url'))->group(function () {
@@ -9,7 +9,7 @@ Route::group(['middleware' => ['web', 'admin']], function () {
 
     // Route::view('/crud', 'crud::admin.index')->name('crud.admin.index');
     Route::get('/crud', [StudentController::class, 'index'])->defaults('_config', [
-      'view' => 'admin::index',
+      'view' => 'admin::crud.index',
     ])->name('admin.crud.index');
   });
 });
